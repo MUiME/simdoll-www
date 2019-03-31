@@ -1,0 +1,62 @@
+.bg_sky{
+    height:430px;
+    background-color: rgb(105, 213, 255);
+}
+.bg_ground{
+    height:220px;
+    background:linear-gradient(to bottom, rgb(255, 204, 102)60%, rgb(255, 255, 255));
+    background:rgb(255, 204, 102);
+    background:-webkit-linear-gradient(top, rgb(255, 204, 102) 60%, rgb(255, 255, 255));
+    background:-moz-linear-gradient(top, rgb(255, 204, 102) 60%, rgb(255, 255, 255));
+    background:-ms-linear-gradient(top, rgb(255, 204, 102) 60%, rgb(255, 255, 255));
+    background:-o-linear-gradient(top, rgb(255, 204, 102) 60%, rgb(255, 255, 255));
+}
+
+.pos_relative100{ position: relative; height: 100%; }
+.pos_absolute0{ position: absolute; left: 0px; top: 0px; }
+#area_map_zoom{
+    width: 100%; height: 100%;
+    visibility: hidden;
+}
+#map_zoom{ width: 100%; height: 100%; }
+
+#area_msg_exit{
+    width: 100%; 
+    position: absolute; 
+    left: 0; top: 100px;
+    display: none;
+}
+#msg_exit{
+    width: 400px; 
+    font-family: 'Times New Roman'; font-size: 20pt; color: white; 
+    background-color: black; 
+    padding: 15px 0; 
+}
+
+#adhome{
+    position: absolute;
+    width: 530px;
+    top: 10px;
+    left: 550px;
+}
+#bear{
+    position: absolute;
+    width: 180px;
+    top:230px;
+    left: 970px;
+}
+
+#mapg{
+    position: absolute;
+    width: 360px;
+    top: 165px;
+    left: 305px;
+    cursor:pointer;
+}
+#mapd{
+    position: absolute;
+    width: 435px;
+    top: 3px;
+    left: -73px;
+    cursor:pointer;
+}

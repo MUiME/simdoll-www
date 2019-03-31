@@ -1,0 +1,99 @@
+.base{
+    height:440px;
+    background-image:url(image/about/bg-repeat-x.jpg);
+    background-repeat:repeat-x;
+}
+.gradient{
+    height:101px;
+    background:rgb(111, 224, 146);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(45%, rgb(111, 224, 146)), color-stop(100%, rgb(255, 255, 255)));
+    background:-webkit-linear-gradient(top, rgb(111, 224, 146) 45%, rgb(255, 255, 255));
+    background:-moz-linear-gradient(top, rgb(111, 224, 146) 45%, rgb(255, 255, 255));
+    background:-ms-linear-gradient(top, rgb(111, 224, 146) 45%, rgb(255, 255, 255));
+    background:-o-linear-gradient(top, rgb(111, 224, 146) 45%, rgb(255, 255, 255));
+    background:linear-gradient(to bottom, rgb(111, 224, 146) 45%, rgb(255, 255, 255));
+}
+
+.factory1{
+    position:absolute; top:15px; left:0px;
+}
+.factory2{
+    position:absolute; top:22px; left:664px;
+}
+.tag{
+    position:absolute; top:269px; left:30px;
+}
+.run{
+    position:absolute; top:12px; left:220px;
+}
+.detail{
+    position:absolute; top:221px; left:512px;
+    width:0px;
+}
+
+
+
+
+#about{
+    position:absolute;
+    top:220px;
+    left:580px;
+}
+#about1{
+    position:absolute;
+    visibility:hidden;
+    width: 100%;
+    height: 100%;
+    top:10px;
+    left:0px;
+}
+#homeA1{
+    position:absolute;
+    width: 55%;
+    height: 55%;
+    top:85px;
+    left:600px;
+}
+#homeA2{
+    width: 38%;
+    height: 38%;
+    position:absolute;
+    top:135px;
+    left:0px;
+}
+#aboutab{
+    position:absolute;
+    width: 10%;
+    height: 10%;
+    top:316px;
+    left:-90px;
+}
+#img_about1{
+    position:absolute;
+    top:20px;
+    left:0px;
+}
+#img_Ad{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#img_homeA1{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#img_homeA2{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+.contentdtl a > img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+
+
+

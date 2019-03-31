@@ -1,0 +1,156 @@
+.bg{
+    height:600px;
+    background:linear-gradient(to bottom, rgb(255, 220, 194) 67%, rgb(255, 255, 255));
+    background:rgb(255, 220, 194);
+    background:-webkit-linear-gradient(top, rgb(255, 220, 194) 67%, rgb(255, 255, 255));
+    background:-moz-linear-gradient(top, rgb(255, 220, 194) 67%, rgb(255, 255, 255));
+    background:-ms-linear-gradient(top, rgb(255, 220, 194) 67%, rgb(255, 255, 255));
+    background:-o-linear-gradient(top, rgb(255, 220, 194) 67%, rgb(255, 255, 255));
+}
+
+.vase{
+    position:absolute; top:78px; left:108px;
+    width:96px;
+}
+.window{
+    position:absolute; top:131px; left:238px;
+    width:132px;
+}
+.lamp{
+    position:absolute; top:0px; left:196px;
+    width:126px;
+}
+.board{
+    position:absolute; top:288px; left:122px;
+    width:212px;
+}
+.bear{
+    position:absolute; top:29px; left:640px;
+    width:100px;
+}
+.horse.seq1{
+    position:absolute; top:339px; left:758px;
+    width:196px;
+}
+.horse.seq2{
+    position:absolute; top:342px; left:755px;
+    width:196px;
+}
+.back{
+    position:absolute; top:160px; left:588px;
+    cursor:pointer;
+}
+.back > .bear{
+    position:absolute; top:0px; left:0px;
+    width:100px;
+}
+.back > .word{
+    position:absolute; top:-14px; left:82px;
+    height:55px;
+}
+.rack{
+    position:absolute; top:79px; left:353px;
+    width:432px; height:348px;
+    background-image:url(image/gallery/rack_body.png);
+}
+.rack > .level-group{
+    position:absolute; top:32px; left:64px;
+    width:313px; height:279px;
+    display:none;
+}
+.rack > .level-group.selected{ display:block; }
+.rack > .level-group > .level1{ height:104px; }
+.rack > .level-group > .level2{ height:96px; }
+.rack > .level-group > .level3{ height:86px; }
+.rack > .level-group .block{ position:relative; display:inline-block; }
+.rack > .level-group.major .block{ width:100%; height:100%; }
+.rack > .level-group.sub > .level1 > .block{
+    margin:8px 5px;
+    width:86px; height:86px;
+    /*background-color:tomato;*/
+}
+.rack > .level-group.sub > .level2 > .block{
+    margin:6px 5px;
+    width:82px; height:82px;
+    /*background-color:greenyellow;*/
+}
+.rack > .level-group.sub > .level3 > .block{
+    margin:4px 6px;
+    width:72px; height:72px;
+    /*background-color:royalblue;*/
+}
+.rack > .level-group .block > img.icon{
+    position:absolute; bottom:0px;
+    cursor:pointer;
+    height:100%;
+}
+.rack > .level-group .block > img.title{
+    position:absolute; bottom:0px;
+    cursor:pointer;
+    height:30px;
+}
+.rack > .level-group .block > img.title.odd{
+    -webkit-transform:rotate(5deg); 
+    -moz-transform:rotate(5deg); 
+    -o-transform:rotate(5deg);
+    transform:rotate(5deg);
+}
+.rack > .level-group .block > img.title.even{
+    -webkit-transform:rotate(-5deg); 
+    -moz-transform:rotate(-5deg); 
+    -o-transform:rotate(-5deg);
+    transform:rotate(-5deg);
+}
+.rack > .door_l{
+    position:absolute; top:33px; left:52px;
+    width:0px; height:279px;
+    overflow:hidden;
+    -webkit-transform:skew(5deg); 
+    -moz-transform:skew(5deg); 
+    -o-transform:skew(5deg);
+    transform:skew(5deg);
+    z-index:1;
+}
+.rack > .door_l > img{
+    position:absolute; top:0px; right:11px;
+    width:181px; height:100%;
+    -webkit-transform:skew(-5deg); 
+    -moz-transform:skew(-5deg); 
+    -o-transform:skew(-5deg);
+    transform:skew(-5deg);
+}
+.rack > .door_r{
+    position:absolute; top:33px; right:44px;
+    width:0px; height:279px;
+    overflow:hidden;
+    -webkit-transform:skew(-5deg); 
+    -moz-transform:skew(-5deg); 
+    -o-transform:skew(-5deg);
+    transform:skew(-5deg);
+    z-index:1;
+}
+.rack > .door_r > img{
+    position:absolute; top:0px; left:12px;
+    width:188px; height:100%;
+    -webkit-transform:skew(5deg); 
+    -moz-transform:skew(5deg); 
+    -o-transform:skew(5deg);
+    transform:skew(5deg);
+}
+
+.popup-background{
+    background-color:rgb(53, 53, 53);
+    opacity:0.8;
+}
+.popup-base{
+    position:relative; top:55px;
+    width:714px; height:437px;
+    background-color:white;
+    border-radius:8px;
+    padding-top:50px;
+}
+.popup-base > .close{
+    position:absolute; top:-15px; right:-15px;
+    cursor:pointer;
+    z-index:2;
+}

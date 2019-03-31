@@ -1,0 +1,139 @@
+.base{
+    height:438px;
+    background-image:url(image/production/bg-repeat-x.jpg);
+    background-repeat:repeat-x;
+}
+.gradient{
+    height:101px;
+    background:rgb(213, 246, 203);
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(45%, rgb(213, 246, 203)), color-stop(100%, rgb(255, 255, 255)));
+    background:-webkit-linear-gradient(top, rgb(213, 246, 203) 45%, rgb(255, 255, 255));
+    background:-moz-linear-gradient(top, rgb(213, 246, 203) 45%, rgb(255, 255, 255));
+    background:-ms-linear-gradient(top, rgb(213, 246, 203) 45%, rgb(255, 255, 255));
+    background:-o-linear-gradient(top, rgb(213, 246, 203) 45%, rgb(255, 255, 255));
+    background:linear-gradient(to bottom, rgb(213, 246, 203) 45%, rgb(255, 255, 255));
+}
+
+.anim{ visibility:hidden; }
+
+.road{
+    position:absolute; top:22px; left:249px;
+}
+.tag{
+    position:absolute; top:214px; left:27px;
+    z-index:1;
+}
+.cloth{
+    position:absolute; top:39px; left:84px;
+    width:115px;
+}
+
+.step1.process{
+    position:absolute; top:19px; left:183px;
+}
+.step1.word{
+    position:absolute; top:8px; left:336px;
+}
+.step1.move.seq1{
+    position:absolute; top:50px; left:336px;
+}
+.step1.move.seq2{
+    position:absolute; top:38px; left:386px;
+}
+.step1.move.seq3{
+    position:absolute; top:42px; left:451px;
+}
+
+.step2.process.p1{
+    position:absolute; top:38px; left:474px;
+}
+.step2.process.p2{
+    position:absolute; top:2px; left:527px;
+}
+.step2.process.p3{
+    position:absolute; top:76px; left:456px;
+}
+.step2.word{
+    position:absolute; top:8px; left:579px;
+}
+.step2.move.seq1{
+    position:absolute; top:138px; left:427px;
+}
+.step2.move.seq2{
+    position:absolute; top:165px; left:381px;
+}
+
+.step3.process.p1{
+    position:absolute; top:177px; left:332px; width:65px;
+}
+.step3.process.p2{
+    position:absolute; top:134px; left:219px;
+}
+.step3.word{
+    position:absolute; top:146px; left:310px;
+}
+.step3.move.seq1{
+    position:absolute; top:231px; left:342px;
+}
+.step3.move.seq2{
+    position:absolute; top:208px; left:404px;
+}
+.step3.move.seq3{
+    position:absolute; top:186px; left:455px;
+}
+.step3.move.seq4{
+    position:absolute; top:157px; left:497px;
+}
+
+.step4.process.p1{
+    position:absolute; top:132px; left:572px;
+}
+.step4.process.p2{
+    position:absolute; top:95px; left:631px;
+}
+.step4.process.p3{
+    position:absolute; top:129px; left:618px;
+}
+.step4.word{
+    position:absolute; top:112px; left:673px;
+}
+.step4.move.seq1{
+    position:absolute; top:129px; left:688px;
+}
+.step4.move.seq2{
+    position:absolute; top:149px; left:739px;
+}
+
+.step5.process.p1{
+    position:absolute; top:169px; left:682px;
+}
+.step5.process.p2{
+    position:absolute; top:257px; left:764px;
+}
+.step5.process.p3{
+    position:absolute; top:238px; left:800px;
+}
+.step5.word{
+    position:absolute; top:152px; left:813px;
+}
+.step5.move.seq1{
+    position:absolute; top:268px; left:710px;
+}
+.step5.move.seq2{
+    position:absolute; top:300px; left:668px;
+}
+
+.step6.process.p1{
+    position:absolute; top:269px; left:554px;
+    width:73px;
+}
+.step6.process.p2{
+    position:absolute; top:320px; left:531px;
+}
+.step6.word{
+    position:absolute; top:241px; left:600px;
+}
+
+.truck{
+    position:absolute; top:269px; left:347px;
+}

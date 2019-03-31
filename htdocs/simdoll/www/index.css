@@ -1,0 +1,192 @@
+.bg{
+    height:500px;
+    background:linear-gradient(to bottom, rgb(255, 204, 102)55%, rgb(255, 255, 255));
+    background:rgb(255, 204, 102);
+    background:-webkit-linear-gradient(top, rgb(255, 204, 102) 55%, rgb(255, 255, 255));
+    background:-moz-linear-gradient(top, rgb(255, 204, 102) 55%, rgb(255, 255, 255));
+    background:-ms-linear-gradient(top, rgb(255, 204, 102) 55%, rgb(255, 255, 255));
+    background:-o-linear-gradient(top, rgb(255, 204, 102) 55%, rgb(255, 255, 255));
+}
+#home{
+    position:absolute;
+      width: 300px; 
+     top: 210px;
+     left: 213px;
+    cursor: pointer;
+    /*height:220px;*/
+}
+#home1{
+     position:absolute;
+   visibility:hidden;
+     cursor: pointer;
+     width: 330px;
+    top: 200px;
+     left: 215px;
+    /*height:260px;*/
+}
+
+#product{
+    position:absolute;
+    width: 180px;
+    top: 188px;
+    left: 700px;
+    /*height:220px;*/
+}
+#product1{
+    position:absolute;
+     visibility:hidden;
+      cursor: pointer;
+    width: 220px;
+     top: 145px;
+    left: 681px;
+  /*  height:245px;*/
+}
+
+#bearfaq{
+    position:absolute;
+    cursor: pointer;
+      width: 130px;
+    top: 350px;
+     left: 71px;
+   /* height:83px;*/
+}
+#bearfaq1{
+    position:absolute;
+    visibility: hidden;
+    cursor: pointer;
+    width: 160px;
+  top: 328px;
+  left: 60px;
+   /* height:83px;*/
+}
+
+#bearmail{
+    position:absolute;
+    width: 100px;
+    top: 338px;
+    left: 535px;
+   /* height:100px;*/
+}
+#bearmail1{
+    position:absolute;
+   visibility:hidden;
+   cursor: pointer;
+    width: 130px;
+    top: 307px;
+     left: 528px;
+    /*height:130px;*/
+}
+#simdoll{
+    position:absolute;
+    width:130px;
+    top:10px;
+    left:780px;
+   /* height:140px;*/
+}
+#simdoll1{
+    position:absolute;
+    visibility:hidden;
+    cursor: pointer;
+    width:130px;
+    top:10px;
+    left:780px;
+    /*height:140px;*/
+}
+
+.contentdtl a > img{
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+
+
+
+#rope{
+    background-image: url(image/index/rope.png);
+    position: absolute;
+    width: 40px;
+    height: 400px;
+    left: 60px;
+    top:-400px;
+}
+
+#hcontact{
+    position: absolute;
+    visibility: hidden;
+      width: 140px;
+    top: 285px;
+    left: 620px;
+    
+}
+#hproduct{
+    position: absolute;
+     visibility: hidden;
+    width: 150px;
+    top: 180px;
+    left: 850px;
+}
+
+#habout{
+    position: absolute;
+    visibility: hidden;
+    width: 130px;
+    top: 50px;
+    left: 900px;
+}
+
+.move.m1{
+    position: absolute;
+    width: 88px;
+    top: 321px;
+    left: 512px;
+}
+    
+.move.m2{
+    position: absolute;
+    width: 130px;
+    top: 288px;
+    left: 478px;
+}
+.move.m3{
+    position: absolute;       
+    width: 134px;
+    top: 181px;
+    left: 483px;
+}
+    
+
+.move.m4{
+    position: absolute;   
+    width: 134px;
+    top: 181px;
+    left: 483px;
+}
+    
+
+.move.m5{
+    position: absolute;
+    width: 332px;
+    top: 131px;
+    left: 284px;
+}
+.move.m6{
+    position: absolute;
+    width: 486px;
+    top: 83px;
+    left: 130px;
+    
+}
+.move.m7{
+    position: absolute;
+    width: 1125px;
+    top: 10px;
+    height: 437px;
+    left: -86px;
+    opacity: 0.7;
+
+}
+.anim{
+  visibility: hidden;
+  
+}

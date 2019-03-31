@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Welcome to Simdoll</title>
+    <style>
+        body{ overflow-y:hidden; }
+        @media screen and (max-width:1023px){
+            body{ overflow-y:auto; }
+        }
+    </style>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=IE7" />
+    <meta charset="UTF-8" />
+    
+    <script src="lib/js/mootools/mootools-core-1.4.1-yc.js" type="text/javascript"></script>
+    <script src="lib/js/mootools/mootools-more-1.4.0.1-yc.js" type="text/javascript"></script>
+    <script src="global.js" type="text/javascript"></script>
+    <script src="index.js" type="text/javascript"></script>
+    <script src="lib/js/Shakes!/shakes.js" type="text/javascript"></script>
+    
+    <link href="global.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div align="center" id="wrapper" class="wrapper">
+        <div id="container_header" class="container_header">
+            <img id="banner" class="banner" src="image/banner.png" />
+            <div align="center" class="menu_area">
+                <div class="menu_list" >
+                    <a id="indexc" href=".">Home</a> | <a id="gc" href="gallery.html">Gallery</a> | <a id="proc" href="production.html">Production</a> | <a id="aboutc" href="about.html">About Us</a> | <a id="faqc" href="faq.html">FAQ</a> | <a id="conc" href="contact.html">Contact Us</a> 
+                </div>
+            </div>
+        </div>
+        
+        <div id="container_content" class="container_content" style="overflow: hidden;">
+            <div style="position:absolute; top:0px; right:0px; left:0px; min-width:1024px;">
+                <div style="height:429px; background-color:rgb(105, 213, 255);"></div>
+             <!--   <div style="height:80px; background:linear-gradient(to bottom, rgb(100, 220, 56) 4%, rgb(121, 229, 70));"></div>-->
+                <div class="bg"></div>
+            </div>
+            <div class="contentdtl">
+                <div style="position:relative; width:1024px;height:600px;">
+                    <img src="image/index/hbg.jpg" style="position:absolute;width:1350px;top:-50px;left:-145px; height:585px;" />
+                    <a  id="home"><img id="img_home" src="image/index/homeC.png" /></a>
+                    <a  id="home1"><img id="img_home1" src="image/index/bighome.png" /></a>
+                    <!--<div id="bottle"><a href="contact.html"><img id="img_bottle" src="image/index/bottle1.png" /></a></div>-->
+                    
+                    <a  id="bearfaq"><img id="img_bearfaq" src="image/index/hfaq.png" /></a>
+                    <a id="bearfaq1"><img id="img_bearfaq" src="image/index/hfaq.png" /></a>
+                    <div id="rope"></div>
+                    <a id="bearmail"><img id="img_bearmail" src="image/index/bearmini3.png" /></a>         
+                    <a id="bearmail1"><img id="img_bearmail" src="image/index/bearmini32.png" /></a>
+                    <a id="simdoll"><img id="img_simdoll" src="image/index/simdoll.png" /></a>
+                    <a id="simdoll1"><img id="img_simdoll1" src="image/index/simdolllogo2.png" /></a>
+                    <a  id="product"><img id="img_fact" src="image/index/mill.gif" /></a>
+                    <a  id="product1"><img id="img_fact" src="image/index/mill.gif" /></a>
+                    <img id="hcontact" src="image/index/hcontact.png" />
+                    <img id="hproduct" src="image/index/hproduct.png" />
+                    <img id="habout" src="image/index/habout.png" />    
+                    <img class="anim move m1" flag="1" src="image/index/Mail.png" />
+                    <img class="anim move m2" flag="1" src="image/index/Mail1.png" />
+                    <img class="anim move m3" flag="1" src="image/index/Mail2.png" />
+                    <img class="anim move m4" flag="1" src="image/index/Mail3.png" />
+                    <img class="anim move m5" flag="1" src="image/index/Mail4.png" />
+                    <img class="anim move m6" flag="1" src="image/index/Mail5.png" />
+                    <img class="anim move m7" flag="1" src="image/index/Mail6.png" />
+                </div>
+                
+                <!--<div style="position: absolute; width: 900px;height: 500px; top: 0px;left: 0px; overflow:hidden; background-color:purple;">
+                    <a href="gallery.html"><img src="image/index/homeopen.png" style="position:absolute;top:150px;left:200px; width:280px; height:207px;"/></a>
+                </div>-->
+                <div id="abig" style="position: absolute; width: 1400px;height: 500px; top: 0px;left: -169px; overflow:hidden;display: none;">
+                   <img id="bighome" src="image/index/bighome.png" style="position:absolute;top:200px;left:385px; width:330px;/* height:217px;*/ "/>
+                </div>
+                <div id="aproduct" style="position: absolute; width: 1200px;height: 500px; top: 0px;left: 0px; overflow:hidden;display: none;">
+                   <img id="bigproduct" src="image/index/hf.png" style="position:absolute;top:145px;left:671px; width:220px; /*height:300px;*/ "/>
+                </div>
+                
+                <div id="blur1" style="position: absolute; width: 1450px;height: 800px; top: 0px;left: -175px; overflow:hidden;display: none;">
+                    <img id="bg1" src="image/index/gb.jpg" style="position:absolute; width: 456px; left: 453px; top: 64px; height: 290px; opacity: 0.5;" />
+                </div>
+                <div id="blur2" style="position: absolute; width: 1450px;height: 800px; top: 0px;left: -175px; overflow:hidden;display: none;">
+                    <img id="bg2" src="image/index/pb.jpg" style="position:absolute; width: 456px; left: 453px; top: 64px; height: 290px; opacity: 0.5;" />
+                </div>
+            </div>    
+        </div>
+    </div>
+    <div class="copyright">Copyright &copy; 2015 by Simdoll | All rights reserved.</div>
+</body>
+</html>
