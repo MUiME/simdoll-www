@@ -1,0 +1,17 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    depends_on:
+      - php
+    volumes:
+      - ./conf:/etc/nginx/conf.d/
+      - ./htdocs:/web/htdocs
+    ports:
+      - 80:80
+
+  php:
+    image: muime/phpfpm
+    volumes:
+      - ./htdocs:/web/htdocs
+    command: "php-fpm -d date.timezone=Asia/Bangkok -d expose_php=0"
