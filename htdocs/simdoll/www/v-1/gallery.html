@@ -1,0 +1,430 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simdoll > Gallery</title>
+
+<script type="text/javascript">
+    if(navigator.appName == "Microsoft Internet Explorer"){
+        document.write('<script type="text/javascript" src="lib/MooTools/mootools-core1.2.5-yui.js"></'+'script>');
+        document.write('<script type="text/javascript" src="lib/MooTools/mootools-more1.2.5.1-yui.js"></'+'script>');
+    }
+    else{
+        document.write('<script type="text/javascript" src="lib/MooTools/mootools-core-yui.js"></'+'script>');
+        document.write('<script type="text/javascript" src="lib/MooTools/mootools-more-yui.js"></'+'script>');
+    }
+</script>
+<!--<script type="text/javascript" src="lib/MooTools/mootools-core1.2.5-yui.js"></script>
+<script type="text/javascript" src="lib/MooTools/mootools-more1.2.5.1-yui.js"></script>-->
+<script type="text/javascript" src="main.js"></script>
+
+<link rel="stylesheet" href="lib/MooFlow-V0.2/MooFlow.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="lib/MooFlow-V0.2/MooFlowViewer.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lib/MooFlow-V0.2/MooFlow_edit.js"></script>
+<script type="text/javascript" src="lib/MooFlow-V0.2/MooFlowViewer_edit.js"></script>
+
+<link rel="stylesheet" href="lib/Slimbox-1.71/css/slimbox.css" type="text/css" media="screen" />
+<script type="text/javascript" src="lib/Slimbox-1.71/js/slimbox.js"></script>
+
+<style type="text/css">
+@import url('main.css');
+
+#content_category{
+    width:100%; height:100%;
+    position:absolute;
+    left:0; top:-567px;
+    overflow:hidden;
+    z-index:3;
+}
+#container_category{
+    width:100%; height:100%;
+    position:relative;
+}
+#area_cate_back{
+    width:652px; height:547px;
+    position:absolute;
+    top:20px; left:29px;
+    overflow:hidden;
+}
+#container_cate_back{
+    width:100%; 
+    position:absolute;
+    left:0px;
+}
+#cate_back{
+    width:652px;
+    position:absolute;
+    top:0px; left:0px;
+}
+#cate_back div{ width:100%;  }
+#cate_back .cb0{ height:25px; background-image:url('image/gallery/shelfback0.png'); }
+#cate_back .cb1{ height:138px; background-image:url('image/gallery/shelfback1.png'); }
+.category{
+    width:100%;
+    position:absolute;
+    left:0px;
+    text-align:left;
+}
+.category img{ cursor:pointer; }
+#cate_front_top{
+    width:638px; height:42px;
+    position:absolute;
+    top:0px; left:35px;
+    background-image:url('image/gallery/shelffront_top.png');
+}
+#cate_front_left{
+    width:35px; height:100%;
+    position:absolute;
+    top:0px; left:0px;
+    background-image:url('image/gallery/shelffront_left.png');
+}
+#cate_front_right{
+    width:41px; height:100%;
+    position:absolute;
+    top:0px; right:0px;
+    background-image:url('image/gallery/shelffront_right.png');
+}
+#content_item{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    visibility:hidden;
+}
+#rope{
+    width:88px; height:200px;
+    position:absolute;
+    top:-40px; right:15px;
+    cursor:pointer;
+    background-image:url('image/gallery/rope.png');
+    z-index:2;
+}
+#cate_name{ margin:10px 0px -30px 0px; color:#565656; }
+#container_item{
+    width:627px;
+    padding:5px;
+}
+</style>
+
+<script type="text/javascript">
+    var draggables, top_cate, top_cate_move, is_first_fall, is_click, cate_visited, cate_show, top_rope;
+    var content_category, container_category, container_cate_back, cate_back, content_item, cate_name, rope;
+
+    window.addEvent("domready", function() {
+        draggables = [];
+        top_cate = [];
+        top_cate_move = [];
+        is_click = true;
+        is_first_fall = true;
+        cate_visited = [];
+        cate_show = '';
+        top_rope = 0;
+
+        content_category = $('content_category');
+        container_category = $('container_category');
+        container_cate_back = $('container_cate_back');
+        cate_back = $('cate_back');
+        content_item = $('content_item');
+        cate_name = $('cate_name');
+        rope = $('rope');
+
+        var h_diff = cate_back.offsetHeight - $('area_cate_back').offsetHeight;
+        container_cate_back.setStyle('height', cate_back.offsetHeight+h_diff);
+        container_cate_back.setStyle('top', -h_diff);
+
+        draggables.push(cate_back);
+        top_cate.push(cate_back.offsetTop);
+        top_cate_move.push(cate_back.offsetTop);
+        $$('.category').each(function(elem, i){
+            draggables.push(elem);
+            top_cate.push(elem.offsetTop);
+            top_cate_move.push(elem.offsetTop);
+        });
+
+        shelf_fall();
+        add_ev_shelf();
+
+        top_rope = rope.offsetTop;
+        rope.addEvent('click', click_rope);
+    });
+
+    function shelf_fall(){
+        var opt_contcate_lv3 = {
+            duration:390, transition:'quad:in', property:'top', 
+            onComplete:check_fall 
+        }
+
+        var opt_contcate_lv2 = {
+            duration:850, transition:'quad:out', property:'top', 
+            onComplete: function(){
+                var tween_fall3 = new Fx.Tween(content_category, opt_contcate_lv3);
+                tween_fall3.start(0);
+            }
+        }
+
+        var opt_contcate_lv1 = {
+            duration:2400, transition:'cubic:in', property:'top',
+            onComplete: function(){
+                var tween_fall2 = new Fx.Tween(content_category, opt_contcate_lv2);
+                tween_fall2.start(-10);
+            }
+        }
+
+        var tween_fall1 = new Fx.Tween(content_category, opt_contcate_lv1);
+        tween_fall1.start(0);
+    }//end shelf_fall
+
+    function add_ev_shelf(){
+        draggables.each(function(elem, i){
+            elem.addEvent('mousewheel', function(e){
+                e.stop();
+                var diff = 15;
+                glideTo(-1, ((e.wheel >= 0)? -diff: diff));
+            });
+            if(i > 0){
+                elem.getChildren().each(function(el){
+                    el.addEvent('mouseup', function(){
+                        if(is_click){
+                            check_fall();					
+                            show_content_item(el);
+                        }
+                        is_click = true;
+                    });
+                });
+            }
+
+            var dragmove = new Drag.Move(elem, { 
+                container: container_cate_back,
+                onStart: function(el){ is_click = false; el.setStyle('cursor', 'move'); },
+                onDrag: function(el, e){ glideTo(i, top_cate_move[i]-el.offsetTop); },
+                onDrop: function(el){
+                    is_click = true; 
+                    el.setStyle('cursor', 'default');
+                }
+            });
+
+            /*var touch = new Touch(elem);
+            touch.addEvent('start', function(){});
+            touch.addEvent('move', function(){});
+            touch.addEvent('end', function(){});*/
+
+            if (Browser.Platform.ipod){
+                /*$extend(Element.NativeEvents, {
+                    touchstart: 2, touchmove: 2, touchend: 2
+                });
+                $extend(Element.Events, {
+                    mousedown: { base: 'touchstart' },
+                    mousemove: { base: 'touchmove' },
+                    mouseup: { base: 'touchend' }
+                });*/
+
+                elem.addEvents({
+                    'touchstart': function(){ dragmove.fireEvent('start', this); },
+                    'touchmove': function(){ dragmove.fireEvent('drag', this); },
+                    'touchend': function(){ dragmove.fireEvent('drop', this); }
+                });
+                /*elem.addEvents({
+                    'gesturestart': function(){ dragmove.fireEvent('start', this); },
+                    'gesturechange': function(){ dragmove.fireEvent('drag', this); },
+                    'gestureend': function(){ dragmove.fireEvent('drop', this); }
+                });*/
+            }
+
+
+            
+
+            /*Element.Events = {
+                mousedown: { base: 'touchstart' },
+                mousemove: { base: 'touchmove' },
+                mouseup: {base: 'touchend' }
+            };
+
+            elem.addEvents({
+                'touchstart': function(){ dragmove.fireEvent('start', this); },
+                'touchmove': function(){ dragmove.fireEvent('drag', this); },
+                'touchend': function(){ dragmove.fireEvent('drop', this); }
+            });*/
+        });
+    }//end add_ev_shelf
+
+    function check_fall(){
+        if(is_first_fall){
+            is_first_fall = false;
+            content_item.setStyle('visibility', 'visible');
+        } 
+    }//end check_fall
+
+    function glideTo(index, diff){
+        var d = (index == 0)? 0: diff;
+        if(cate_back.offsetTop-d <= container_cate_back.offsetTop){
+            draggables.each(function(el, i){ 
+                el.setStyle('top', top_cate[i]+container_cate_back.offsetTop);
+                top_cate_move[i] = el.offsetTop;
+            });
+        }
+        else if(cate_back.offsetTop-d >= 0){
+            draggables.each(function(el, i){ 
+                el.setStyle('top', top_cate[i]);
+                top_cate_move[i] = el.offsetTop;
+            });
+        }
+        else{
+            draggables.each(function(el, i){
+                if(i != index){ el.setStyle('top', el.offsetTop-diff); }
+                top_cate_move[i] = el.offsetTop;
+            });
+        }
+    }//end glideTo
+  
+    function show_content_item(elem){
+        rope.setStyle('top', top_rope);
+        var tween_rise = new Fx.Tween(content_category, { duration:1500, transition:'sine:out', property:'top' });
+        tween_rise.start(-$('container').offsetHeight);
+        if(cate_show){ $('imgflow_'+cate_show).setStyle('display','none'); }
+        show_item(elem);
+    }//end show_content_item
+
+    function show_item(elem){
+        var id = elem.id;
+        cate_name.innerHTML = elem.title;
+        if(cate_visited.indexOf(id) == -1){
+            list_item(elem);
+            cate_visited.push(id);
+        }
+        else{
+            $('imgflow_'+id).setStyle('display', 'block');
+        }
+        cate_show = id;
+    }//end show_item
+
+    function list_item(elem){
+        var id = elem.id;
+        var rootpath = 'image/product/'+id;
+        new Element('div', {'id':'imgflow_'+id}).inject($('container_item'));
+        new Request.HTML({
+            url: 'listFile.php',
+            update: $('imgflow_'+id),
+            onComplete: function(){
+                var mf = new MooFlow($('imgflow_'+id), {
+                    onClickView: function(){ this.onClickView(this.getCurrent()); },
+                    heightRatio: 0.63,
+                    startIndex: 0,
+                    interval: 2000,
+                    factor: 120,
+                    bgColor: '',
+                    useCaption: true,
+                    useResize: true,
+                    useSlider: true,
+                    useMouseWheel: true,
+                    useWindowResize: true, 
+                    useKeyInput: true,
+                    useViewer: true,
+                    useAutoPlay: true,
+                    blankImgPath: 'image/gallery/img_blank_unit.png',
+                    loadingImgPath: 'lib/MooFlow-V0.2/skin/loading.gif'
+                });
+            }
+        }).get({'path':rootpath});
+    }//end list_item
+
+    function click_rope(){
+        this.set('tween', {
+            duration:100,
+            transition:'quint',
+            onComplete:shelf_fall
+        });
+        this.tween('top', '0px');
+    }//end click_rope
+</script>
+</head>
+<body>
+<div id="page" align="center">
+    <div id="area_wrapper" align="center">
+        <div id="wrapper">   
+            <div id="wood"></div>
+            <div id="area_content">
+                <div class="brick1 pos_brick1"></div>
+                <div class="brick2 pos_brick2"></div>
+                <div class="brick1 pos_brick3"></div>
+                <div class="brick2 pos_brick4"></div>
+                <div class="brick1 pos_brick5"></div>
+                <div class="brick2 pos_brick6"></div>
+
+                <div id="logo"></div>
+                <div id="bearbar"></div>
+                <div id="pad_header"><div id="header"></div></div>
+                <div id="pad_pri_link">
+                    <div><a href=".">Home</a></div>
+                    <div><a href="gallery.html">Gallery</a></div>
+                    <div><a href="production.html">Production</a></div> 
+                    <div><a href="faq.html">FAQ</a></div>
+                    <div><a href="contact.html">Contact Us</a></div>
+                    <div id="area_search">
+                        <form> <input id="search" name="search" type="text" /> </form>
+                    </div>
+                </div>
+                <div style="clear:left;"></div>
+                <div id="content" style="height:567px;">
+                    <div id="base" style="height:550px;background-image:url('image/gallery/bg_base.png');"></div>
+                    <div id="area_container">
+                        <div id="container" style="height:100%;overflow:hidden;">
+                            <div id="content_category">
+                                <div id="container_category">                      
+                                    <div id="area_cate_back">
+                                        <div id="container_cate_back"></div>
+                                        <div id="cate_back">
+                                            <div class="cb0"></div>
+                                            <div class="cb1"></div>
+                                            <div class="cb1"></div>
+                                            <div class="cb1"></div>
+                                            <div class="cb1"></div>
+                                            <div class="cb1"></div>
+                                        </div>				
+                                        <div id="shelf_lv1" class="category" style="top:49px;">
+                                            <img id="01" src="image/product/onshelf/doll11.png" style="margin-left:69px;" title="">
+                                            <img id="02" src="image/product/onshelf/doll12.png" style="margin-left:100px;" title="">
+                                            <img id="03" src="image/product/onshelf/doll13.png" style="margin-left:110px;" title="">
+                                        </div>
+                                        <div id="shelf_lv2" class="category" style="top:186px;">
+                                            <img id="04" src="image/product/onshelf/doll21.png" style="margin-bottom:-14px;margin-left:72px;" title="">
+                                            <img id="05" src="image/product/onshelf/doll22.png" style="margin-left:105px;" title="">
+                                            <img id="06" src="image/product/onshelf/doll23.png" style="margin-left:129px;" title="">
+                                        </div>
+                                        <div id="shelf_lv3" class="category" style="top:342px;">
+										    <img id="07" src="image/product/onshelf/doll31.png" style="margin-bottom:-17px;margin-left:79px;">
+                                            <img id="08" width="102" height="46" src="image/product/onshelf/doll32.png" style="margin-left:102px;" title="">
+                                            <img id="09" width="112" height="83" src="image/product/onshelf/doll33.png" style="margin-left:99px;" title="">
+                                        </div>
+                                        <div rel="shelf_lv4" class="category" style="top:463px;">
+                                            <img id="10" src="image/product/onshelf/doll41.png" style="margin-left:64px;" title="">
+                                            <img id="11" src="image/product/onshelf/doll42.png" style="margin-left:92px;" title="">
+                                            <img id="12" src="image/product/onshelf/doll43.png" style="margin-left:95px;" title="">
+                                        </div>
+                                        <div rel="shelf_lv5" class="category" style="top:604px;">
+                                            <img id="13" src="image/product/onshelf/doll51.png" style="margin-left:64px;" title="">
+                                            <!--<img src="image/product/doll1.png">
+                                            <img src="image/product/doll1.png" hspace="100">
+                                            <img src="image/product/doll1.png">-->
+                                        </div>
+                                    </div>
+                                    <div id="cate_front_top"></div>
+                                    <div id="cate_front_left"></div>
+                                    <div id="cate_front_right"></div>
+                                </div>
+                            </div>
+                            <div id="content_item">
+                                <div id="rope"></div>
+                                <div style="padding-top:15px;">
+                                    <div style="font-size:24pt;color:#565656;"><b>Category</b></div>
+                                    <div id="cate_name">&nbsp;</div>
+                                </div>
+                                <div id="container_item"></div>		
+                            <div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

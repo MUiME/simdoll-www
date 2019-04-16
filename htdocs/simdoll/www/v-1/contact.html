@@ -1,0 +1,367 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simdoll > Contact Us</title>
+
+<script type="text/javascript" src="lib/MooTools/mootools-core-yui.js"></script>
+<script type="text/javascript" src="lib/MooTools/mootools-more-yui.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
+<style type="text/css">
+@import url('main.css');
+
+#content_contact{ height: 100%; position: relative; overflow: hidden; }
+.pos_relative100{ position: relative; height: 100%; }
+.pos_absolute0{ position: absolute; left: 0px; top: 0px; }
+
+#area_paper_addr{
+    width: 456px; height: 669px;
+    position: absolute;
+    left: 172px; top: -630px;
+}
+#area_paper_addr img{ border: none; width: 456px; height: 669px; }
+
+#area_msg_addr{
+    width: 335px; height: 240px;
+    position: absolute;
+    left: 233px; top: -484px;
+}
+#area_msg_addr div img{ width: 278px; height: 200px; margin-left: 5px; margin-top: 18px; }
+
+#area_paper_other1{
+    width: 116px; height: 114px;
+    position: absolute;
+    left: 342px; top: -114px;
+}
+#area_paper_other1 div img{ width: 99px; height: 88px; margin-left: 11px; margin-top: 11px; }
+
+#area_paper_contact{
+    width: 354px; height: 158px;
+    position: absolute;
+    left: 215px; top: -195px;
+}
+#area_paper_contact img{ border: none; width: 354px; height: 158px; }
+
+#area_msg_contact{
+    width: 205px; height: 90px;
+    position: absolute;
+    left: 291px; top: -153px;
+}
+#area_msg_contact div img{ width: 197px; height: 83px; margin-left: 4px; margin-top: 5px; }
+
+#area_msg_dept{
+    width: 111px; height: 50px;
+    position: absolute;
+    left: 298px; top: -146px;
+}
+#area_msg_dept div img{ width: 103px; height: 20px; margin-left: 4px; margin-top: 16px; }
+
+#area_logo{
+    width: 108px; height: 114px;
+    position: absolute;
+    left: 346px; top: -164px;
+}
+#area_logo div img{ width: 108px; height: 114px; margin-left: 0px; margin-top: 0px; }
+
+#area_clip{
+    width: 137px; height: 118px;
+    position: absolute;
+    left: 332px; top: -128px;
+}
+#area_clip div img{ width: 91px; height: 102px; margin-left: 30px; margin-top: 9px; }
+
+#area_heart{
+    width: 74px; height: 68px;
+    position: absolute;
+    left: 363px; top: -148px; 
+}
+#area_heart img{ border: none; width: 74px; height: 68px; }
+
+#area_paper_other2{
+    width: 300px; height: 202px;
+    position: absolute;
+    left: 250px; top: -182px;
+}
+#area_paper_other2 img{ border: none; width: 300px; height: 202px; }
+
+#area_paper_photo{
+    width: 185px; height: 185px;
+    position: absolute;
+    left: 308px; top:-195px;
+}
+#area_paper_photo div img{ width: 185px; height: 185px; margin-left: 0px; margin-top: 0px; }
+
+#area_paper_other3{
+    width: 92px; height: 144px;
+    position: absolute;
+    left: 354px; top:-204px;
+}
+#area_paper_other3 div img{ width: 88px; height: 141px; margin-left: 4px; margin-top: 3px; }
+
+#area_photo{
+    width: 160px; height: 160px;
+    position: absolute;
+    left: 320px; top:-160px;
+}
+#area_photo div img{ width: 160px; height: 160px; margin-left: 0px; margin-top: 0px; }
+
+#area_coins{
+    width: 130px; height: 116px;
+    position: absolute;
+    left: 335px; top:-126px;
+}
+#area_coins div img{ width: 110px; height: 92px; margin-left: 11px; margin-top: 11px; }
+
+#area_map0{
+    width: 607px; height: 570px;
+    position: absolute;
+    left: 97px; top:-540px;
+}
+#area_map0 img{ border: none; width: 607px; height: 570px; }
+
+#area_pen{
+    width: 126px; height: 480px;
+    position: absolute;
+    left: 200px; top:-440px;
+}
+#area_pen div img{ width: 69px; height: 464px; margin-left: 28px; margin-top: 12px; }
+
+#area_map{
+    width: 463px; height: 424px;
+    position: absolute;
+    left: 132px; top: -519px;
+}
+#area_map div img{ width: 453px; height: 418px; margin-left: 5px; margin-top: 5px; cursor:pointer; }
+
+#area_key{
+    width: 312px; height: 170px;
+    position: absolute;
+    left: 244px; top: -247px;
+}
+#area_key div img{ width: 292px; height: 161px; margin-left: 15px; margin-top: 5px; }
+
+#area_map_zoom{
+    width: 100%; height: 100%;
+    visibility: hidden;
+}
+#map_zoom{ width: 100%; height: 100%; }
+
+#area_msg_exit{
+    width: 100%; 
+    position: absolute; 
+    left: 0; top: 100px;
+    display: none;
+}
+#msg_exit{
+    width: 400px; 
+    font-family: 'Times New Roman'; font-size: 20pt; color: white; 
+    background-color: black; 
+    padding: 15px 0; 
+}
+</style>
+
+<script type="text/javascript">
+    var tween_msg_exit, is_zoom, scrolly, keyESC;
+    window.addEvent("domready", function(){
+        tween_msg_exit = null;
+        is_zoom = true;
+        scrolly = 0;
+        keyESC = null;
+
+        var obj_animate = [];
+        obj_animate['area_paper_addr'] = {left:67, top:-9};
+        obj_animate['area_msg_addr'] = {left:127, top:62};
+        obj_animate['area_paper_other1'] = {left:638, top:280};
+        obj_animate['area_paper_contact'] = {left:409, top:52};
+        obj_animate['area_msg_contact'] = {left:547, top:105};
+        obj_animate['area_msg_dept'] = {left:571, top:63};
+        obj_animate['area_logo'] = {left:432, top:79};
+        obj_animate['area_clip'] = {left:356, top:24};
+        obj_animate['area_heart'] = {left:29, top:22};
+        obj_animate['area_paper_other2'] = {left:191, top:607};
+        obj_animate['area_paper_photo'] = {left:4, top:478};
+        obj_animate['area_paper_other3'] = {left:209, top:338};
+        obj_animate['area_photo'] = {left:16, top:490};
+        obj_animate['area_coins'] = {left:31, top:526};
+        obj_animate['area_map0'] = {left:201, top:272};
+        obj_animate['area_map'] = {left:218, top:305}
+        obj_animate['area_pen'] = {left:4, top:39};
+        obj_animate['area_key'] = {left:111, top:658};
+
+        var div_animate = $$('div').filter(function(el){ return el.getProperty('rel')=='animate'; });
+        div_animate.each(function(el){
+            el.set('morph', {duration:2500});
+            el.morph({left:obj_animate[el.id].left, top:obj_animate[el.id].top});
+        });
+
+        with(google.maps){
+            var maps_latlng = new LatLng(13.70159106514657, 100.61749139262083);
+            var maps_map = new Map($('map_zoom'), {
+                zoom:16,
+                center:maps_latlng,
+                mapTypeId:MapTypeId.ROADMAP
+            });
+
+            var maps_marker = new Marker({map:maps_map, position:maps_latlng});
+            event.addListener(maps_marker, "click", function(){
+                var html = "<div align='left' style='font-family:Tahoma;font-size:10pt;'><div><b>Company</b> : รุ่งทวีวิวัฒน์ จำกัด (Rungtaveeviwat Co.,Ltd)</div><div><b>Address</b> : 612 สุขุมวิท93 บางจาก พระโขนง กรุงเทพฯ 10260</div><div><b>Tel</b> : +662-742-5193, <b>Fax</b> : +662-742-5194</div></div>";
+                var maps_infowindow = new InfoWindow({content:html, position:maps_latlng});
+                maps_infowindow.open(maps_map);
+            });
+        }
+
+        tween_msg_exit = new Fx.Tween($('area_msg_exit'), {duration:4500});
+        tween_msg_exit.set("opacity", 0);
+        tween_msg_exit.set("display", "block");
+
+        $('map').addEvent("click", zoom_map);
+    });
+    function zoom_map(){
+        var area_fullscreen = $('area_fullscreen');
+        var area_map_zoom = $('area_map_zoom');
+        if(is_zoom){
+            scrolly = window.getScroll().y;
+            area_fullscreen.setStyle("overflow", "hidden");
+            area_map_zoom.setStyle("visibility", "visible");
+            tween_msg_exit.set("opacity", 1);
+            tween_msg_exit.start("opacity", 0);
+            is_zoom = false;
+
+            keyESC = function(e){ if(e.code == 27){ e.stop(); zoom_map(); } }
+            document.addEvent('keydown', keyESC);
+        }
+        else{
+            area_fullscreen.setStyle("overflow", "");
+            area_map_zoom.setStyle("visibility", "hidden");
+            tween_msg_exit.cancel();
+            tween_msg_exit.set("opacity", 0);
+			window.scrollTo(0, scrolly);          
+            is_zoom = true;
+
+            document.removeEvent('keydown', keyESC);
+        }
+    }//end zoom_map
+</script>
+</head>
+<body>
+<div id="area_fullscreen" class="pos_relative100">
+    <div id="area_map_zoom" class="pos_absolute0" style="z-index:1;">
+        <div class="pos_relative100"><div id="map_zoom" class="pos_absolute0"></div></div>
+    </div>
+    <div id="area_msg_exit" align="center" style="z-index:1;">
+        <div id="msg_exit">Press Esc to exit</div>
+    </div>
+    <div id="page" align="center">
+        <div id="area_wrapper" align="center">
+            <div id="wrapper">
+                <div id="wood"></div>
+                <div id="area_content">
+                    <div class="brick1 pos_brick1"></div>
+                    <div class="brick2 pos_brick2"></div>
+                    <div class="brick1 pos_brick3"></div>
+                    <div class="brick2 pos_brick4"></div>
+                    <div class="brick1 pos_brick5"></div>
+                    <div class="brick2 pos_brick6"></div>
+
+                    <div id="logo"></div>
+                    <div id="bearbar"></div>		
+                    <div id="pad_header"><div id="header"></div></div>
+                    <div id="pad_pri_link">
+                        <div><a href=".">Home</a></div>
+                        <div><a href="gallery.html">Gallery</a></div>
+                        <div><a href="production.html">Production</a></div> 
+                        <div><a href="faq.html">FAQ</a></div>
+                        <div><a href="contact.html">Contact Us</a></div>
+                        <div id="area_search">
+                            <form> <input id="search" name="search" type="text" /> </form>
+                        </div>
+                    </div>
+                    <div style="clear:left;"></div>
+                    <div id="content" style="height:849px;">
+                        <div id="base" style="background-image:url('image/contact/bg_base.png');"></div>
+                        <div id="area_container">
+                            <div id="container"></div>
+                            <div id="content_contact">
+                                <div id="area_paper_addr" rel="animate">
+                                    <img src="image/contact/paper_addr.png" alt="" />
+                                </div>
+
+                                <div id="area_msg_addr" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/msg_addr.png" alt="Company: รุ่งทวีวิวัฒน์ จำกัด&#10;     Rungtaveeviwat Co.,Ltd&#10;&#10;Tel:      +662-742-5193&#10;&#10;Fax:      +662-742-5194&#10;&#10;Address:  612 สุขุมวิท93 บางจาก&#10;            พระโขนง กรุงเทพฯ 10260&#10;" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_paper_other1" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/paper_other1.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_paper_contact" rel="animate">
+                                    <img src="image/contact/paper_contact.png" alt="" />
+                                </div>
+
+                                <div id="area_msg_contact" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/msg_contact.png" alt="(+66)08-6321-2525&#10;(+66)08-1444-4262&#10;(+66)08-6367-8499&#10;simdoll2009@gmail.com" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_msg_dept" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/msg_dept.png" alt="Sale Team" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_logo" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/logo.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_clip" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/clip.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_heart" rel="animate">
+                                    <img src="image/contact/heart.png" alt="" />
+                                </div>
+
+                                <div id="area_paper_other2" rel="animate">
+                                    <img src="image/contact/paper_other2.png" alt="" />
+                                </div>
+
+                                <div id="area_paper_photo" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/paper_photo.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_paper_other3" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/paper_other3.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_photo" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/photo.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_coins" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/coins.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+          
+                                <div id="area_map0" rel="animate">
+                                    <img src="image/contact/map0.png" alt="" />
+                                </div>
+
+                                <div id="area_map" rel="animate"> 
+                                    <div class="pos_relative100"><img id="map" src="image/contact/map.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+          
+                                <div id="area_pen" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/pen.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+
+                                <div id="area_key" rel="animate">
+                                    <div class="pos_relative100"><img src="image/contact/key.png" alt="" class="pos_absolute0" /></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+</body>
+</html>

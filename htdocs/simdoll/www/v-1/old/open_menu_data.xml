@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<menu type="slide down pro v 2.0">
+	<media_to_load lev0_top_path="" lev0_mid_normal_path="menu_data/root.png" lev0_mid_mouseover_path="menu_data/root_o.swf" lev0_mid_selected_path="menu_data/root_s.png" lev0_bottom_path="" lev0_arrow_path="menu_data/arrow.png" search_button_path="menu_data/lev0_mid_normal.swf" lev1_top_path="" lev1_mid_normal_path="menu_data/root.png" lev1_mid_mouseover_path="menu_data/root.png" lev1_mid_selected_path="menu_data/root_s.png" lev1_bottom_path="" lev1_arrow_path="menu_data/arrow.png" bg_path="menu_data/bg.gif" snd_level0_mouseover_path="" snd_level1_mouseover_path="" snd_click_path="menu_data/s1.mp3"/>
+	<menu_structure>
+		<item>
+			<item text="Home" url="main.html" icon="menu_data/icon_root.png" open_window="cen" take_level_colorize_data="1"/>
+			<item text="Products" url="" icon="menu_data/icon_root.png" open_window="" take_level_colorize_data="1">
+				<item text="Simdoll Brand" url="bsim.html" icon="menu_data/icon_sub.png" open_window="cen" take_level_colorize_data="1"/>
+				<item text="Made to order" url="bmade.html" icon="menu_data/icon_sub.png" open_window="cen" take_level_colorize_data="1"/>
+			</item>
+			<item text="Our Factory" url="" icon="menu_data/icon_root.png" open_window="" take_level_colorize_data="1">
+				<item text="Overview" url="view.html" icon="menu_data/icon_sub.png" open_window="cen" take_level_colorize_data="1"/>
+				<item text="History" url="history.html" icon="menu_data/icon_sub.png" open_window="cen" take_level_colorize_data="1"/>
+			</item>
+			<item text="How to find us" url="howto.html" icon="menu_data/icon_root.png" open_window="cen" take_level_colorize_data="1"/>
+			<item text="Contact" url="contact.html" icon="menu_data/icon_root.png" open_window="cen" take_level_colorize_data="1"/>
+		</item>
+	</menu_structure>
+</menu>

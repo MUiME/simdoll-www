@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simdoll</title>
+
+<script type="text/javascript" src="lib/MooTools/mootools-core-yui.js"></script>
+<script type="text/javascript" src="lib/MooTools/mootools-more-yui.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<style type="text/css">
+@import url('main.css');
+
+#container div a img{ border-color:transparent; }
+#home{
+    position:absolute;
+    top:12px; right:0px;
+    visibility:hidden;
+}
+#bridge{
+    position:absolute;
+    top:153px; right:252px;
+    visibility:hidden;
+}
+#welcome{
+    position:absolute;
+    top:5px; left:20px;
+    /*text-align:left;
+    width:500px; height:240px;
+    background-color:pink;
+    font-family:'Tahoma';
+    font-size:10pt;
+    padding:0 10px;*/
+}
+#label_production{
+    position:absolute;
+    top:170px; right:280px;
+}
+#bottle{
+    position:absolute;
+    bottom:-365px; left:507px;
+}
+#bearsimdoll{
+    position:absolute;
+    top:323px; right:289px;
+}
+</style>
+
+<script type="text/javascript">
+    window.addEvent("domready", function(){ 
+        if(navigator.userAgent.contains('Safari')){
+            $('home').setStyles({'top':14, 'right':2});
+            $('bridge').setStyles({'top':155, 'right':254});
+        }
+
+        $('bottle').addEvents({
+            mouseover: function(){ $('img_bottle').src = "image/index/bottle2.png"; },
+            mouseout: function(){ $('img_bottle').src = "image/index/bottle1.png"; }
+        });
+        $('bearsimdoll').addEvents({
+            mouseover: function(){ $('img_bearsimdoll').src = "image/index/bearsimdoll2.png"; },
+            mouseout: function(){ $('img_bearsimdoll').src = "image/index/bearsimdoll1.png"; }
+        });
+
+        $('area_home').addEvent("mouseover", function(){ $('home').setStyle('visibility', 'visible'); });
+        $('home').addEvent("mouseout", function(){ $('home').setStyle('visibility', 'hidden'); });
+
+        $('area_bridge').addEvent("mouseover", function(){ $('bridge').setStyle('visibility', 'visible'); });
+        $('bridge').addEvent("mouseout", function(){ $('bridge').setStyle('visibility', 'hidden'); });
+    });
+</script>
+</head>
+<body>
+<div id="page" align="center">
+    <div id="area_wrapper" align="center">
+        <div id="wrapper">
+            <div id="wood"></div>
+            <div id="area_content">
+                <div class="brick1 pos_brick1"></div>
+                <div class="brick2 pos_brick2"></div>
+                <div class="brick1 pos_brick3"></div>
+                <div class="brick2 pos_brick4"></div>
+                <div class="brick1 pos_brick5"></div>
+                <div class="brick2 pos_brick6"></div>
+
+                <div id="logo"></div>
+                <div id="bearbar"></div>
+                <div id="pad_header"><div id="header"></div></div>
+                <div id="pad_pri_link">
+                    <div><a href=".">Home</a></div>
+                    <div><a href="gallery.html">Gallery</a></div>
+                    <div><a href="production.html">Production</a></div> 
+                    <div><a href="faq.html">FAQ</a></div>
+                    <div><a href="contact.html">Contact Us</a></div>
+                    <div id="area_search">
+                        <form> <input id="search" name="search" type="text" /> </form>
+                    </div>
+                </div>
+                <div style="clear:left;"></div>
+                <div id="content" style="height:500px;">
+                    <div id="base" style="background-image:url('image/index/bg_base.png');"></div>
+                    <div id="area_container">
+                        <div id="container">
+                            <div id="welcome"><img src="image/index/msg_welcome.png" />
+                                <!--<h3 style="color:#444444">Welcome to Simdoll</h3>
+                                <p style="text-indent:20px;color:#555555;">ยินดีต้อนรับสู่ SIMDOLL เรามีความยินดีที่จะนำเสนอสินค้าที่จะสร้างความสุข<br>
+							รอยยิ้มความประทับใจ แก่ผู้ให้และผู้รับ
+ หากคุณกำลังมองหาของขวัญให้คนพิเศษ
+							    <br>ของอินเทรนด์สุดล้ำ หรือจะเป็น สินค้าพรีเมียม จากไอเดียของคุณเอง
+
+<br><p style="text-indent:20px;color:#555555;">เรา SIMDOLL ขอเป็นหนี่งทางเลือกของคุณ
+<br>ด้วยประสบการณ์ในด้านการออกแบบดีไซน์ และงานเย็บปราณีตขั้นสูง
+<br>เรามั่นใจในคุณภาพวัสดุ สายการผลิต ด้วยเทคโนโลยีที่ทันสมัย
+<br>สอดคล้องกับความต้องการ และประทับใจแก่คุณอย่างแน่นอน-->
+                            </div>
+
+                            <div style="position:absolute;right:-1px;top:11px;">
+                                <img src="image/index/index.png" usemap="#map_index" style="border:none;" />
+                                <map name="map_index">
+                                    <area id="area_home" shape="rect" coords="517,49,688,220" nohref />
+                                    <area id="area_bridge" shape="rect" coords="267,204,459,288" nohref />
+                                </map>
+                            </div>
+                            <div id="home"><a href="gallery.html"><img src="image/index/homegallery.png" /></a></div>
+                            <div id="bridge"><a href="production.html"><img id="img_bridge" src="image/index/bridge.png"></a></div>
+                            <div id="bearsimdoll"><a href="faq.html"><img id="img_bearsimdoll" src="image/index/bearsimdoll1.png" /></a></div>
+                            <div id="bottle"><a href="contact.html"><img id="img_bottle" src="image/index/bottle1.png" /></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

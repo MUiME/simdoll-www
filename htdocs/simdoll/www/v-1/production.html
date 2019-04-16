@@ -1,0 +1,763 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simdoll > Production</title>
+
+<script type="text/javascript" src="lib/MooTools/mootools-core-yui.js"></script>
+<script type="text/javascript" src="lib/MooTools/mootools-more-yui.js"></script>
+<script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="lib/Shakes!/shakes.js"></script>
+
+<style type="text/css">
+@import url('main.css');
+.pos_relative100{ position: relative; width: 100%; }
+.pos_absolute0{ position: absolute; left: 0px; top: 0px; }
+
+.p_style1 p{
+    font-family: 'Arial';
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0px;
+    text-align: center;
+}
+.p_style2 p{
+    font-family: 'Arial';
+    font-size: 14px;
+    line-height: 23px;
+    margin: 0px;
+    text-align: center;
+}
+.layout_text{ position: relative; padding: 4px; }
+.animate{ visibility: hidden; }
+#area_talk1{ 
+    position: absolute; left: 203px; top: 21px; 
+    width: 309px; height: 87px; 
+}
+#area_talk2{
+    position: absolute; left: 70px;  top: 405px;
+    width: 205px; height: 108px;
+}
+#area_talk3{
+    position: absolute; left: 424px; top: 468px;
+    width: 261px; height: 124px;
+}
+#area_talk4{
+    position: absolute; left: 417px; top: 962px; 
+    width: 164px; height: 110px;
+    z-index: 1;
+}
+#area_talk5{
+    position: absolute; left: 530px; top: 1004px;
+    width: 132px; height: 94px;
+}
+#area_talk6{
+    position: absolute; left: 48px; top: 1316px;
+    width: 136px; height: 72px;
+}
+#area_talk7{
+    position: absolute; left: 395px; top: 1318px; 
+    width: 283px; height: 165px;
+}
+#area_talk8{
+    position: absolute; left: 41px; top: 2053px;
+    width: 187px; height: 90px;
+}
+#area_talk9{
+    position: absolute; left: 489px; top: 2000px;
+    width: 181px; height: 107px;
+}
+#area_text1{
+    position: absolute; left: 215px; top: 34px;
+    width: 274px; height: 29px;
+}
+#area_text2{
+    position: absolute; left: 72px; top: 417px;
+    width: 191px; height: 58px;
+}
+#area_text3{
+    position: absolute; left: 480px; top: 475px;
+    width: 155px; height: 108px;
+}
+#area_text4{
+    position: absolute; left: 417px; top: 976px;
+    width: 156px; height: 51px;
+    z-index: 1;
+}
+#area_text5{
+    position: absolute; left: 548px; top:1014px;
+    width: 100px; height: 57px;
+}
+#area_text6{
+    position: absolute; left: 32px; top: 1321px;
+    width: 156px; height: 29px;
+}
+#area_text7{
+    position: absolute; left: 406px; top: 1337px;
+    width: 247px; height: 98px;
+}
+#area_text8{
+    position: absolute; left: 45px; top: 2068px;
+    width: 166px; height: 51px;
+}
+#area_text9{
+    position: absolute; left: 496px; top: 2013px;
+    width: 152px; height: 51px;
+}
+#area_rug{
+    position: absolute; left: 302px; top: 168px;
+    width: 80px; height: 1px;
+    overflow: hidden;
+}
+#rug{ width: 80px; height: 410px; }
+#area_rose1l{ position: absolute; left: 206px; top: 219px; }
+#area_rose1r{ position: absolute; left: 389px; top: 219px; }
+#area_rose2l{ position: absolute; left: 206px; top: 306px; }
+#area_rose2r{ position: absolute; left: 389px; top: 306px; }
+#area_rose3l{ position: absolute; left: 206px; top: 393px; }
+#area_rose3r{ position: absolute; left: 389px; top: 393px; }
+#area_rose4l{ position: absolute; left: 206px; top: 480px; }
+#area_rose4r{ position: absolute; left: 389px; top: 480px; }
+#area_bearleft1{ position: absolute; left: 346px; top: 235px; }
+#area_bearright1{ position: absolute; left: 310px; top: 280px; }
+#area_bearleft2{ position: absolute; left: 346px; top: 325px; }
+#area_bearright2{ position: absolute; left: 310px; top: 370px; }
+#area_bearleft3{ position: absolute; left: 346px; top: 415px; }
+#area_bearright3{ position: absolute; left: 310px; top: 460px; }
+#area_bearleft4{ position: absolute; left: 346px; top: 505px; }
+#area_bearright4{ position: absolute; left: 310px; top: 550px; }
+
+#area_bear1-1{
+    position: absolute; left: 216px; top: 82px;
+    width: 144px; height: 156px;
+    z-index: 1;
+}
+#area_bear1-2{
+    position: absolute; left: 342px; top: 92px;
+    width: 137px; height: 152px;
+}
+#area_bear2{
+    position: absolute; left: 120px; top: 507px;
+    width: 137px; height: 152px;
+}
+#area_bear3{
+    position: absolute; left: 427px; top: 583px; 
+    width: 144px; height: 156px;
+}
+#area_bear4{
+    position: absolute; left: 379px; top: 1072px;
+    width: 154px; height: 156px;
+    z-index: 1; 
+}
+#area_bear5{
+    position: absolute; left: 422px; top: 1075px; 
+    width: 144px; height: 156px;
+}
+#area_bear6{
+    position: absolute; left: 100px; top: 1380px; 
+    width: 152px; height: 153px;
+}
+#area_bear7{
+    position: absolute; left: 449px; top: 1477px; 
+    width: 154px; height: 156px;
+}
+#area_bear8{
+    position: absolute; left: 119px; top: 2118px;
+    width: 152px; height: 153px;
+}
+#area_bear9{
+    position: absolute; left: 466px; top: 2105px; 
+    width: 154px; height: 156px;
+}
+#area_effect_bear3{
+    position: absolute; left: 488px; top: 582px;
+    width: 106px; height: 62px;
+}
+#area_effect_bear3 div img{ margin-left: 7px; margin-top: 7px; }
+#area_effect_bear5{
+    position: absolute; left: 491px; top: 1093px; 
+    width: 40px; height: 28px;
+}
+#area_effect_bear5 div img{ margin-left: -1px; margin-top: -1px; }
+#area_effect_bear6{
+    position: absolute; left: 122px; top: 1415px;
+    width: 47px; height: 37px;
+}
+#area_effect_bear6 div img{ margin-left: -1px; margin-top: -13px; }
+#area_effect_bear7{
+    position: absolute; left: 431px; top: 1459px;
+    width: 50px; height: 86px;
+}
+#area_effect_bear8{
+    position: absolute; left: 139px; top: 2123px; 
+    width: 66px; height: 49px;
+}
+#area_effect_bear8 div img{ margin-left: 2px; }
+#area_belt1{
+    position: absolute; left: 330px; top: 882px; 
+    width: 90px;  height: 1px;
+    overflow: hidden;
+}
+#area_belt2{
+    position: absolute; left: 244px; top: 1268px; 
+    width: 90px; height: 1px;
+    overflow: hidden;
+}
+#area_belt3{
+    position: absolute; left: 320px; top: 1787px; 
+    width: 90px; height: 1px;
+    overflow: hidden;
+}
+#area_object1{
+    position: absolute; left: 341px; top: 882px;
+    width: 61px; height: 47px;
+}
+#area_object2{
+    position: absolute; left: 260px; top: 1268px;
+    width: 50px; height: 83px;
+}
+#area_object3{
+    position: absolute; left: 334px; top: 1787px;
+    width: 55px; height: 56px;
+}
+#area_photo1{
+    position: absolute; left: 203px; top: 586px; 
+    width: 224px; height: 150px;
+}
+#area_photo2{
+    position: absolute; left: 344px; top: 657px;
+    width: 142px; height: 213px;
+}
+#area_photo3{
+    position: absolute; left: 161px; top: 1069px; 
+    width: 248px; height: 186px;
+    z-index: 1;
+}
+#area_photo4{
+    position: absolute; left: 173px; top: 1451px; 
+    width: 160px; height: 207px;
+}
+#area_photo5{
+    position: absolute; left: 313px; top: 1587px; 
+    width: 278px; height: 186px;
+}
+#area_photo6{
+    position: absolute; left: 211px; top: 1976px; 
+    width: 300px; height: 225px; 
+}
+#area_frame1{
+    position: absolute; left: 187px; top: 574px; 
+    width: 262px; height: 186px;
+}
+#area_frame2{
+    position: absolute; left: 331px; top: 644px;
+    width: 177px; height: 248px;
+}
+#area_frame3{
+    position: absolute; left: 146px; top: 1056px; 
+    width: 286px; height: 222px;
+    z-index: 1;
+}
+#area_frame4{
+    position: absolute; left: 159px; top: 1441px; 
+    width: 194px; height: 236px;
+}
+#area_frame5{
+    position: absolute; left: 297px; top: 1574px; 
+    width: 317px; height: 224px;
+}
+#area_frame6{
+    position: absolute; left: 192px; top: 1958px; 
+    width: 346px; height: 269px; 
+}
+</style>
+
+<script type="text/javascript">
+    window.addEvent("domready", function(){
+        var anim = animate()
+            .delay(800)
+            .tween($('speak1'), 'visibility', 'visible', {duration: 1000})
+            .delay(500)
+
+            .tween($('rose_p1'), 'visibility', 'visible', {duration: 400})
+            .tween($('rose_p2'), 'visibility', 'visible', {duration: 400})
+            .tween($('rose_p3'), 'visibility', 'visible', {duration: 400})
+            .tween($('rose_p4'), 'visibility', 'visible', {duration: 400})
+            .tween($('area_rug'), 'visibility', 'visible', {duration: 250})
+            .tween($('area_rug'), 'height', $('rug').height, {duration: 1000})
+            .tween($('area_bearleft1'), 'visibility', 'visible', {duration: 250}) //b1
+            .tween($('area_bearright1'), 'visibility', 'visible', {duration: 250}) //b1
+
+            .tween($('area_bearleft1'), 'visibility', 'hidden', {duration: 0}) //b1
+            .tween($('area_bearleft2'), 'visibility', 'visible', {duration: 250}) //b1
+
+
+            .tween($('area_bearright1'), 'visibility', 'hidden', {duration: 0}) //b1
+            .tween($('area_bearright2'), 'visibility', 'visible', {duration: 250}) //b1
+
+
+            .tween($('area_bearleft1'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearleft2'), 'visibility', 'hidden', {duration: 0}) //b1
+            .tween($('area_bearleft3'), 'visibility', 'visible', {duration: 250}) //b1
+
+
+            .tween($('area_bearright1'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearright2'), 'visibility', 'hidden', {duration: 0}) //b1
+            .tween($('area_bearright3'), 'visibility', 'visible', {duration: 250}) //b1
+
+
+            .tween($('area_bearleft1'), 'visibility', 'hidden', {duration: 0}) //b2
+            .tween($('area_bearleft2'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearleft3'), 'visibility', 'hidden', {duration: 0}) //b1
+            .tween($('area_bearleft4'), 'visibility', 'visible', {duration: 250}) //b1
+
+
+            .tween($('area_bearright1'), 'visibility', 'hidden', {duration: 0}) //b2
+            .tween($('area_bearright2'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearright3'), 'visibility', 'hidden', {duration: 0}) //b1
+            .tween($('area_bearright4'), 'visibility', 'visible', {duration: 250}) //b1
+
+
+            .tween($('area_bearleft2'), 'visibility', 'hidden', {duration: 0}) //b2
+            .tween($('area_bearleft3'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearleft4'), 'visibility', 'hidden', {duration: 0}) //b1
+            .delay(250)
+
+
+            .tween($('area_bearright2'), 'visibility', 'hidden', {duration: 0}) //b2
+            .tween($('area_bearright3'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearright4'), 'visibility', 'hidden', {duration: 0}) //b1
+            .delay(250)
+
+
+            .tween($('area_bearleft3'), 'visibility', 'hidden', {duration: 0}) //b2
+            .tween($('area_bearleft4'), 'visibility', 'visible', {duration: 250}) //b2
+
+
+            .tween($('area_bearright3'), 'visibility', 'hidden', {duration: 0}) //b2
+            .tween($('area_bearright4'), 'visibility', 'visible', {duration: 250}) //b2
+
+            .tween($('area_bearleft4'), 'visibility', 'hidden', {duration: 0}) //b2
+
+            .delay(250)
+            .tween($('area_bearright4'), 'visibility', 'hidden', {duration: 0}) //b2
+
+
+            .delay(500)
+
+            .tween($('pair1'), 'visibility', 'visible', {duration: 800})
+            .tween($('speak2'), 'visibility', 'visible', {duration: 1000})
+            .tween($('pic1'), 'visibility', 'visible', {duration: 800})
+            .tween($('pic2'), 'visibility', 'visible', {duration: 800})
+            .tween($('speak3'), 'visibility', 'visible', {duration:0})
+            .serial()   
+                .tween($('text3-1'), 'font-size', 26, {duration:250})
+                .tween($('text3-1'), 'font-size', 18, {duration:250})
+                .repeat(3)
+            .end()    
+            .tween($('text3-2'), 'visibility', 'visible')
+
+            .tween($('area_belt1'), 'visibility', 'visible', {duration: 0})
+            .tween($('area_belt1'), 'height', $('belt1').height, {duration: 1000})
+            .tween($('area_object1'), 'visibility', 'visible', {duration: 0})
+            .tween($('area_object1'), 'top', 946, {duration: 1500})
+
+            .tween($('pair2'), 'visibility', 'visible')
+            .tween($('speak4'), 'visibility', 'visible', {duration: 1000})
+            .tween($('pic3'), 'visibility', 'visible', {duration: 800})
+            .tween($('speak5'), 'visibility', 'visible', {duration: 1000})
+
+            .tween($('area_belt2'), 'visibility', 'visible', {duration: 0})
+            .tween($('area_belt2'), 'height', $('belt1').height, {duration: 1000})
+            .tween($('area_object2'), 'visibility', 'visible', {duration: 0})
+            .tween($('area_object2'), 'top', 1306, {duration: 1500})
+
+            .tween($('pair3'), 'visibility', 'visible')
+            .tween($('speak6'), 'visibility', 'visible', {duration: 1000})
+            .tween($('area_effect_bear7'), 'visibility', 'visible', {duration: 1000})
+            .tween($('area_effect_bear6'), 'visibility', 'visible', {duration: 1000})
+            .tween($('speak7'), 'visibility', 'visible', {duration: 1000})
+            .tween($('pic4'), 'visibility', 'visible', {duration: 800})
+            .tween($('pic5'), 'visibility', 'visible', {duration: 800})
+
+            .tween($('area_belt3'), 'visibility', 'visible', {duration: 0})
+            .tween($('area_belt3'), 'height', $('belt1').height, {duration: 1000})
+            .tween($('area_object3'), 'visibility', 'visible', {duration: 0})
+            .tween($('area_object3'), 'top', 1851, {duration: 1500})
+
+            .tween($('area_frame6'), 'visibility', 'visible')
+            .tween($('area_photo6'), 'visibility', 'visible')
+            .tween($('pair4'), 'visibility', 'visible')
+            .tween($('speak8'), 'visibility', 'visible', {duration: 1000})
+            .tween($('speak9'), 'visibility', 'visible', {duration: 1000})
+         
+        anim.start();
+    });
+</script>
+</head>
+<body>
+<div id="page" align="center">
+    <div id="area_wrapper" align="center">
+        <div id="wrapper">
+            <div id="wood"></div>
+            <div id="area_content">
+                <div class="brick1 pos_brick1"></div>
+                <div class="brick2 pos_brick2"></div>
+                <div class="brick1 pos_brick3"></div>
+                <div class="brick2 pos_brick4"></div>
+                <div class="brick1 pos_brick5"></div>
+                <div class="brick2 pos_brick6"></div>
+
+                <div id="logo"></div>
+                <div id="bearbar"></div>
+                <div id="pad_header"><div id="header"></div></div>
+                <div id="pad_pri_link">
+                    <div><a href=".">Home</a></div>
+                    <div><a href="gallery.html">Gallery</a></div>
+                    <div><a href="production.html">Production</a></div> 
+                    <div><a href="faq.html">FAQ</a></div>
+                    <div><a href="contact.html">Contact Us</a></div>
+                    <div id="area_search">
+                        <form> <input id="search" name="search" type="text" /> </form>
+                    </div>
+                </div>
+                <div style="clear:left;"></div>
+                <div id="content" style="height:2300px;">
+                    <div id="base" style="background-image:url('image/production/bg_base.png');"></div>
+                    <div id="area_container">
+                        <div id="container" style="height:100%;">
+                            <div id="area_rug" class="animate">
+                                <img id="rug" src="image/production/rug.png" alt="" />
+                            </div>
+
+                            <div id="area_bearleft1" class="animate">
+                                <img id="bearleft" width="25" height="24" src="image/production/bearleft.png" alt="" />
+                            </div>
+                            <div id="area_bearright1" class="animate">
+                                <img id="bearright" width="25" height="24" src="image/production/bearright.png" alt="" />
+                            </div>
+
+                            <div id="area_bearleft2" class="animate">
+                                <img id="bearleft" width="25" height="24" src="image/production/bearleft.png" alt="" />
+                            </div>
+                            <div id="area_bearright2" class="animate">
+                                <img id="bearright" width="25" height="24" src="image/production/bearright.png" alt="" />
+                            </div>
+
+                            <div id="area_bearleft3" class="animate">
+                                <img id="bearleft" width="25" height="24" src="image/production/bearleft.png" alt="" />
+                            </div>
+                            <div id="area_bearright3" class="animate">
+                                <img id="bearright" width="25" height="24" src="image/production/bearright.png" alt="" />
+                            </div>
+
+                            <div id="area_bearleft4" class="animate">
+                                <img id="bearleft" width="25" height="24" src="image/production/bearleft.png" alt="" />
+                            </div>
+                            <div id="area_bearright4" class="animate">
+                                <img id="bearright" width="25" height="24" src="image/production/bearright.png" alt="" />
+                            </div>
+
+
+                            <div id="area_bear1-1">
+                                <img src="image/production/b1-1.png" alt="" />
+                            </div>
+                            <div id="area_bear1-2">
+                                <img src="image/production/b2-1.png" alt="" />
+                            </div>
+
+                            <div id="rose_p1" class="animate">
+                                <div id="area_rose1l">
+                                    <img src="image/production/rose-left.png" alt="" />
+                                </div>
+                                <div id="area_rose1r">
+                                    <img src="image/production/rose-right.png" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="rose_p2" class="animate">
+                                <div id="area_rose2l">
+                                    <img src="image/production/rose-left.png" alt="" />
+                                </div>
+                                <div id="area_rose2r">
+                                    <img src="image/production/rose-right.png" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="rose_p3" class="animate">
+                                <div id="area_rose3l">
+                                    <img src="image/production/rose-left.png" alt="" />
+                                </div>
+                                <div id="area_rose3r">
+                                    <img src="image/production/rose-right.png" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="rose_p4" class="animate">
+                                <div id="area_rose4l">
+                                    <img src="image/production/rose-left.png" alt="" />
+                                </div>
+                                <div id="area_rose4r">
+                                    <img src="image/production/rose-right.png" alt="" />
+                                </div> 
+                            </div>
+
+                            <div id="speak1" class="animate">
+                                <div id="area_talk1">
+                                    <img src="image/production/talk1.png" alt="" />
+                                </div>
+                                <div id="area_text1">
+                                    <div class="layout_text p_style2" style="color: rgb(88, 77, 77);">
+                                        <p>เรามาเยี่ยมชมโรงงานของพี่ๆเค้ากันเถอะ ^ ^</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="pair1" class="animate">
+                                <div id="area_bear2">
+                                    <img src="image/production/b2-1.png" alt="" />
+                                </div>
+                                <div id="area_bear3">
+                                    <img src="image/production/b1-1.png" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="speak2" class="animate">
+                                <div id="area_talk2">
+                                    <img src="image/production/talk2.png" alt="" />
+                                </div>
+                                <div id="area_text2">
+                                    <div class="layout_text p_style2" style="color: rgb(88, 77, 77);">
+                                        <p>หลังจากได้ผ้าและแบบมาแล้ว<br /></p>
+                                        <p>เราก็นำเข้าเครื่องตัดกันเลย</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="pic1" class="animate">
+                                <div id="area_frame1">
+                                    <img src="image/production/frame1.png" alt="" />
+                                </div>
+                                <div id="area_photo1">
+                                    <img src="image/production/photo1.jpg" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="pic2" class="animate">
+                                <div id="area_frame2">
+                                    <img src="image/production/frame2.png" alt="" />
+                                </div>
+                                <div id="area_photo2">
+                                    <img src="image/production/photo2.jpg" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="speak3" class="animate">
+                                <div id="area_effect_bear3">
+                                    <div class="pos_relative100">
+                                        <img src="image/production/effect1.png" alt="" class="pos_absolute0" />
+                                    </div>
+                                </div>
+                                <div id="area_talk3">
+                                    <img src="image/production/talk3.png" alt="" />
+                                </div>
+                                <div id="area_text3">
+                                    <div class="layout_text p_style1" style="color: rgb(255, 38, 0);">
+                                        <p id="text3-1" style="text-align:left;">โอ้ววว !!!!!...<br /></p>
+                                        <p id="text3-2" class="animate">เครื่องตัดหรอเนี่ย<br />ใหญ่จังเลยยยย</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="area_belt1" class="animate">
+                                <img id="belt1" src="image/production/belt.png" height="175" alt="" />
+                            </div>
+                            <div id="area_object1" class="animate">
+                                <img src="image/production/object1.png" alt="" />
+                            </div>
+                     
+                            <div id="pair2" class="animate">          
+                                <div id="area_bear4">
+                                    <img src="image/production/b2-2.png" alt="" />
+                                </div>
+                                <div id="area_bear5">
+                                    <img src="image/production/b1-1.png" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="speak4" class="animate">
+                                <div id="area_talk4">
+                                    <img src="image/production/talk4.png" alt="" />
+                                </div>
+                                <div id="area_text4">
+                                    <div class="layout_text p_style2" style="color: rgb(88, 77, 77);">  
+                                        <p>จากนั้นพี่ๆเค้าก็จะนำมา<br /></p>
+                                        <p>เย็บตามแบบกันละ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="pic3" class="animate">
+                                <div id="area_frame3">
+                                    <img src="image/production/frame3.png" alt="" />
+                                </div>
+                                <div id="area_photo3">
+                                    <img src="image/production/photo3.jpg" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="speak5" class="animate">
+                                <div id="area_effect_bear5">
+                                    <div class="pos_relative100">
+                                        <img src="image/production/effect2.png" alt="" class="pos_absolute0" />
+                                    </div>
+                                </div>
+                                <div id="area_talk5">
+                                    <img src="image/production/talk5.png" alt="" />
+                                </div>
+                                <div id="area_text5">
+                                    <div class="layout_text p_style2" style="color: rgb(4, 51, 255);">
+                                        <p>มืออาชีพจริงๆ<br /></p>
+                                        <p>เลยแฮะ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="area_belt2" class="animate">
+                                <img id="belt2" src="image/production/belt.png" height="175" alt="" />
+                            </div>
+                            <div id="area_object2" class="animate">
+                                <img src="image/production/object2.png" alt="" />
+                            </div>
+
+                            <div id="pair3" class="animate">           
+                                <div id="area_bear6">
+                                    <img src="image/production/b1-2.png" alt="" />
+                                </div>
+                                <div id="area_bear7">
+                                    <img src="image/production/b2-2.png" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="area_effect_bear6" class="animate">
+                                <div class="pos_relative100">
+                                    <img src="image/production/effect3.png" alt="" class="pos_absolute0" />
+                                </div>
+                            </div>
+                            <div id="speak6" class="animate">
+                                <div id="area_talk6">
+                                    <img src="image/production/talk6.png" alt="" />
+                                </div>
+                                <div id="area_text6">
+                                    <div class="layout_text p_style2" style="color: rgb(88, 77, 77);">
+                                        <p>แล้วก็ยัดนุ่นหรอ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="area_effect_bear7" class="animate">
+                                <img src="image/production/effect4.png" alt="" />
+                            </div>
+                            <div id="speak7" class="animate">
+                                <div id="area_talk7">
+                                    <img src="image/production/talk7.png" alt="" />
+                                </div>
+                                <div id="area_text7">
+                                    <div class="layout_text p_style2" style="color: rgb(255, 47, 146);">
+                                        <p>ไม่ใช่ๆ เค้าใช้ใยสังเคราะห์จ้ะ<br /></p>
+                                        <p>เพราะไม่เป็นเชื้อราและยังใช้เครื่องพิเศษ<br /></p>
+                                        <p>ในการพ่นใยเพื่อให้ฟูทั้งตัวไม่กระจุก<br /></p>
+                                        <p>เป็นก้อนๆเหมือนยัดด้วยมือเชียวนะ</p>
+                                    </div>
+                                </div>
+                            </div>      
+
+                            <div id="pic4" class="animate">          
+                                <div id="area_frame4">
+                                    <img src="image/production/frame4.png" alt="" />
+                                </div>
+                                <div id="area_photo4">
+                                    <img src="image/production/photo4.jpg" alt="" />
+                                </div>
+                            </div>
+
+                            <div id="pic5" class="animate">
+                                <div id="area_frame5">
+                                    <img src="image/production/frame5.png" alt="" />
+                                </div>
+                                <div id="area_photo5">
+                                    <img src="image/production/photo5.jpg" alt="" />
+                                </div>
+                            </div>
+       
+                            <div id="area_belt3" class="animate">
+                                <img id="belt3" src="image/production/belt.png" height="175" alt="" />
+                            </div>
+                            <div id="area_object3" class="animate">
+                                <img src="image/production/object3.png" alt="" />
+                            </div>
+
+                            <div id="area_frame6" class="animate">
+                                <img src="image/production/frame6.png" alt="" />
+                            </div>
+                            <div id="area_photo6" class="animate">
+                                <img src="image/production/photo6.jpg" alt="" />
+                            </div>
+
+                            <div id="pair4" class="animate">
+                                <div id="area_bear8">
+                                    <img src="image/production/b1-2.png" alt="" />
+                                </div>
+                                <div id="area_bear9">
+                                    <img src="image/production/b2-2.png" />
+                                </div>
+                            </div>   
+
+                            <div id="speak8" class="animate">
+                                <div id="area_effect_bear8">
+                                    <div class="pos_relative100">
+                                        <img src="image/production/effect5.png" alt="" class="pos_absolute0" />
+                                    </div>
+                                </div>
+                                <div id="area_talk8">
+                                    <img src="image/production/talk8.png" alt="" />
+                                </div>
+                                <div id="area_text8">
+                                    <div class="layout_text p_style2" style="color: rgb(148, 17, 0);">
+                                        <p>เค้าเก็บทุกรายละเอียดจริงๆ</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="speak9" class="animate">
+                                <div id="area_talk9">
+                                    <img src="image/production/talk9.png" alt="" />
+                                </div>
+                                <div id="area_text9">
+                                    <div class="layout_text p_style2" style="color: rgb(148, 55, 255);">
+                                        <p>เสร็จแล้วก็เย็บเก็บงาน<br /></p>
+                                        <p>บรรจุและจัดส่งจ้ะ</p>
+                                    </div>
+                                </div>
+                            </div>          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+</body>
+</html>

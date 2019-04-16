@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Simdoll > FAQ</title>
+
+<script type="text/javascript" src="lib/MooTools/mootools-core-yui.js"></script>
+<script type="text/javascript" src="lib/MooTools/mootools-more-yui.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+<style type="text/css">
+@import url('main.css');
+.qa_left, .qa_right{ width:395px; min-height:188px; background-image:url('image/faq/bg_faq1.png'); }
+.qa_left{ position:absolute; left:15px; }
+.qa_right{ position:absolute; right:15px; }
+.rope{
+    position:absolute; top:0px;
+    width:13px; height:100%;
+    background-image:url('image/faq/rope_faq.png');
+}
+#bear1{
+    position:absolute; left:7px; top:-138px;
+    width:207px; height:138px;
+    background-image:url('image/faq/bear1.png');
+}
+#bear2{
+    position:absolute; right:14px; top:-148px;
+    width:202px; height:148px;
+    background-image:url('image/faq/bear2.png');
+}
+</style>
+
+<script type="text/javascript">
+    window.addEvent("domready", function(){
+        var top_elem = 0;
+        var elem_previous = null;
+
+        $$('div').filter(function(el){ return el.getProperty("rel")=="qa"; }).each(function(el){
+            var obj = el.getChildren();
+            var align = obj[0].get('html');
+            var html_q = obj[1].get('html');
+            var html_a = obj[2].get('html');
+            
+            var new_elem = new Element('div', {'rel':'animate', 'class':'qa_'+align});
+			var new_elem_inner = new Element('div', {'style':'padding:30px 30px 15px 30px;'}); 
+            var new_q = new Element('div', {'style':'margin-bottom:15px;'}).set('html', '<b>Q : '+html_q+'</b>');
+            var new_a = new Element('div').set('html', '<b>A :</b> '+html_a);
+            new_q.inject(new_elem_inner);
+            new_a.inject(new_elem_inner);
+			new_elem_inner.inject(new_elem);
+            new_elem.inject($('container'));
+            new_elem.setStyle('top', -new_elem.offsetHeight);
+        });
+
+        $('container').getFirst().dispose();
+
+        var animate = $$('div').filter(function(el){ return el.getProperty("rel")=="animate"; });
+        var iLast = animate.length - 1;
+        animate.each(function(el, i){
+            top_elem += 10;
+            if(elem_previous){ top_elem += elem_previous.offsetHeight; }
+            if(i == iLast){ 
+                el.set('tween', { onComplete: function(){
+                    $('bear1').set('tween', {duration:1000});
+                    $('bear1').tween('top', 250);
+                    $('bear2').set('tween', {duration:2000});
+                    $('bear2').tween('top', 605);
+                }});               
+            }
+            el.set('tween', {duration:2500});
+            el.tween('top', top_elem);
+            top_elem += 10;
+            elem_previous = el;
+        });
+    });
+</script>
+</head>
+<body>
+<div id="page" align="center">
+    <div id="area_wrapper" align="center">
+        <div id="wrapper">
+            <div id="wood"></div>
+            <div id="area_content">
+                <div class="brick1 pos_brick1"></div>
+                <div class="brick2 pos_brick2"></div>
+                <div class="brick1 pos_brick3"></div>
+                <div class="brick2 pos_brick4"></div>
+                <div class="brick1 pos_brick5"></div>
+                <div class="brick2 pos_brick6"></div>
+
+                <div id="logo"></div>
+                <div id="bearbar"></div>
+                <div id="pad_header"><div id="header"></div></div>
+                <div id="pad_pri_link">
+                    <div><a href=".">Home</a></div>
+                    <div><a href="gallery.html">Gallery</a></div>
+                    <div><a href="production.html">Production</a></div> 
+                    <div><a href="faq.html">FAQ</a></div>
+                    <div><a href="contact.html">Contact Us</a></div>
+                    <div id="area_search">
+                        <form> <input id="search" name="search" type="text" /> </form>
+                    </div>
+                </div>
+                <div style="clear:left;"></div>
+                <div id="content" style="height:1260px;">
+                    <div id="base" style="background-image:url('image/faq/bg_base.png');"></div>
+                    <div id="area_container">
+                        <div id="container" style="height:100%;text-align:left;font-family:Tahoma;overflow:hidden;">
+                            <div style="visibility:hidden;">
+                                <div rel="qa">
+                                    <span>left</span>
+                                    <span>ชนิดของผ้าที่นำมาประกอบตุ๊กตามีกี่ชนิด และราคาต่างกันอย่างไร ?</span>
+                                    <span>ชนิดของผ้านั้นมีหลากหลายไม่ว่าจะเป็นผ้าขนสั้นหรือขนยาว หรือเป็นผ้าที่ผลิตในประเทศ หรือที่นำเข้า โดยราคาก็จะแตกต่างกันไป เช่น ผ้าที่นำเข้าหรือผ้าที่ขนยาวก็จะมีราคาที่สูงกว่า</span>
+                                </div>
+                                <div rel="qa">
+                                    <span>right</span>
+                                    <span>ตุ๊กตาชนิดใดที่ได้รับความนิยมสูงสุด ?</span>
+                                    <span>ตุ๊กตาที่ได้รับความนิยมสูงสุดตลอดกาลคือ ตุ๊กตาหมี เพราะหมีดูเป็นสัตว์ที่อบอุ่น เหมาะสมกับทุกโอกาส และผู้รับทุกวัย</span>
+                                </div>
+                                <div rel="qa">
+                                    <span>left</span>
+                                    <span>แบบและชนิดที่นำมาประกอบตุ๊กตาจะถูกกำหนดโดยราคาหรือไม่ ?</span>
+                                    <span>ราคาของตุ๊กตานั้น จะมีองค์ประกอบจากแบบเป็นสำคัญ เพราะแต่ละแบบนั้นมีความยากง่ายในการเย็บและผลิตที่แตกต่างกัน</span>
+                                </div>
+                                <div rel="qa">
+                                    <span>left</span>
+                                    <span>ในการเลือกวัสดุมีข้อจำกัดอะไรบ้าง ?</span>
+                                    <span>วัสดุแต่ละประเภทนั้นมีความยืดหยุ่นที่แตกต่างกัน จึงเหมาะกับการนำมาทำตุ๊กตาที่แตกต่างกันด้วย ในการเลือกจึงเน้นให้เหมาะกับแบบและลักษณะทางธรรมชาติของตุ๊กตานั้นๆ เช่น ตุ๊กตาเต่า อาจใช้ผ้าขนสั้นหรือไม่มีขนในการทำ เป็นต้น</span>
+                                </div>
+                                <div rel="qa">
+                                    <span>right</span>
+                                    <span>เม็ดที่อยู่ในตัวตุ๊กตาเป็นเม็ดอะไร ?</span>
+                                    <span>หลายคนเข้าใจว่าเป็นเมล็ดถั่ว แต่จริงๆแล้วเป็นเม็ดพลาสติกที่ใส่ไว้เพื่อสร้างความรู้สึกในการบีบจับ</span>
+                                </div>
+                                <div rel="qa">
+                                    <span>left</span>
+                                    <span>สิ่งที่ยัดในตัวตุ๊กตาคืออะไร ?</span>
+                                    <span>ในอดีตจะใช้นุ่นยัดไว้ในตัวของตุ๊กตา แต่นุ่นมีข้อเสียคือ แห้งยาก ดังนั้นเมื่อมีการนำไปซัก หากตากไม่แห้งสนิท อาจทำให้เกิดเชื้อราขึ้นได้ ปัจจุบันเราจึงใช้ใยโพลีเอสเตอร์ซึ่งมีคุณสมบัติที่ดีกว่ายัดในตัวตุ๊กตาแทน</span>
+                                </div>
+                            </div>
+                            <div id="bear1"></div>
+                            <div id="bear2"></div>
+                            <div class="rope" style="left:201px;"></div>
+                            <div class="rope" style="right:201px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+</body>
+</html>
