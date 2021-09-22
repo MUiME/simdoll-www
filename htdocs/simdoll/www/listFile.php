@@ -6,9 +6,11 @@
     if($handle = opendir($dir)) {
         while (false !== ($entry = readdir($handle))) {
             if ($entry != "." && $entry != "..") {
-                $imagick = new Imagick($dir.'/'.$entry);
-                $width = $imagick->getImageWidth();
-                $height = $imagick->getImageHeight();
+                //$imagick = new Imagick($dir.'/'.$entry);
+                //$width = $imagick->getImageWidth();
+                //$height = $imagick->getImageHeight();
+                $width = 250;
+                $height = 250;
                 
                 $list_obj_img[] = array(
                     'href' => $dir.'/'.$entry,
